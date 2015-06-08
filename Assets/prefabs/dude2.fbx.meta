@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9dbd38b9b34ceba449c480490847491a
-timeCreated: 1433783146
+guid: e26162b47fcff694ba087df458484c18
+timeCreated: 1433785236
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -16,10 +16,12 @@ ModelImporter:
     100016: Left Leg
     100018: Left Leg_end
     100020: mainCamera
-    100022: Right Arm
-    100024: Right Arm_end
-    100026: Right Leg
-    100028: Right Leg_end
+    100022: Point
+    100024: Point.002
+    100026: Right Arm
+    100028: Right Arm_end
+    100030: Right Leg
+    100032: Right Leg_end
     400000: Bone.001
     400002: Cube
     400004: //RootNode
@@ -31,10 +33,12 @@ ModelImporter:
     400016: Left Leg
     400018: Left Leg_end
     400020: mainCamera
-    400022: Right Arm
-    400024: Right Arm_end
-    400026: Right Leg
-    400028: Right Leg_end
+    400022: Point
+    400024: Point.002
+    400026: Right Arm
+    400028: Right Arm_end
+    400030: Right Leg
+    400032: Right Leg_end
     4300000: Cube
     9500000: //RootNode
     13700000: Cube

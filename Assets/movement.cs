@@ -14,7 +14,7 @@ public class movement : MonoBehaviour {
 		if (controller.isGrounded) {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Jump"), Input.GetAxis("Vertical"));
                           
-			moveDirection = transform.TransformDirection(moveDirection);
+			//moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection = moveDirection.normalized;
 			print (moveDirection.magnitude);
 
@@ -24,8 +24,11 @@ public class movement : MonoBehaviour {
 				moveDirection.y = jumpSpeed;
 			*/
 		}
+		if(moveDirection.magnitude != 0)
+			transform.LookAt(transform.position + moveDirection);
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+
 	}
 }
 
