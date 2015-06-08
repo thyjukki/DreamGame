@@ -13,23 +13,22 @@ public class movement : MonoBehaviour {
 
 		if (controller.isGrounded) {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Jump"), Input.GetAxis("Vertical"));
-
-			//sup fag
-
-			                               
-			moveDirection = transform.TransformDirection(moveDirection);
+                          
+			//moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection = moveDirection.normalized;
 			print (moveDirection.magnitude);
 
 			moveDirection *= speed * Time.deltaTime;
 
-			if (Input.GetButton("Jump"))
+			/*if (Input.GetButton("Jump"))
 				moveDirection.y = jumpSpeed;
-			
+			*/
 		}
+		if(moveDirection.magnitude != 0)
+			transform.LookAt(transform.position + moveDirection);
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+
 	}
 }
 
-// penisssss hueheuehe
