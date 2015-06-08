@@ -14,7 +14,7 @@ public class movement : MonoBehaviour {
 		if (controller.isGrounded) {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Jump"), Input.GetAxis("Vertical"));
 
-
+			//sup fag
 
 			                               
 			moveDirection = transform.TransformDirection(moveDirection);
