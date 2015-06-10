@@ -16,15 +16,19 @@ public var levelReached4: boolean = false;
 public var levelReached0 : boolean = false;
 private var savedLevel : int = 0; 
 
-public var collider1 = level1Unlocked.GetComponent(BoxCollider);
-public var collider2 = level2Unlocked.GetComponent(BoxCollider);
-public var collider3 = level3Unlocked.GetComponent(BoxCollider);
-public var collider4 = level4Unlocked.GetComponent(BoxCollider);
+public var collider1 : BoxCollider;
+public var collider2 : BoxCollider;
+public var collider3 : BoxCollider;
+public var collider4 : BoxCollider;
 
 function Start () {
 //If we have a savefile
 if(PlayerPrefs.HasKey)
 {
+	collider1 = level1Unlocked.GetComponent(BoxCollider);
+	collider2 = level2Unlocked.GetComponent(BoxCollider);
+	collider3 = level3Unlocked.GetComponent(BoxCollider);
+	collider4 = level4Unlocked.GetComponent(BoxCollider);
     // Grab the saved data, use it to load that level
     savedLevel = PlayerPrefs.GetInt("SavedLevel");
 }
