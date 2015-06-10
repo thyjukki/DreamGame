@@ -7,6 +7,7 @@ public class UIManagerScript : MonoBehaviour {
 	public Animator settingsButton;
 	public Animator dialog;
 	public Animator contentPanel;
+	public Animator gearImage;
 
 	public void ToggleMenu()
 	{
@@ -14,6 +15,8 @@ public class UIManagerScript : MonoBehaviour {
 		
 		bool isHidden = contentPanel.GetBool("isHidden");
 		contentPanel.SetBool("isHidden", !isHidden);
+		gearImage.enabled = true;
+		gearImage.SetBool("isHidden", !isHidden);
 	}
 
 	void Start()
