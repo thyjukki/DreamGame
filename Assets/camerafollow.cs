@@ -9,5 +9,7 @@ public class camerafollow : MonoBehaviour {
 
 	void Update () {
 			transform.position = ball.transform.position + cameradistance;
+
+		print (Input.GetAxis ("Mouse ScrollWheel"));
 	}
 }

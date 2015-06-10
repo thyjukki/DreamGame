@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 485e88959dc4aea4e874e687daaeccf0
-timeCreated: 1433787617
+guid: 7b819046140852d40913975ebcff14b4
+timeCreated: 1433791762
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -40,6 +40,17 @@ ModelImporter:
     400030: Right Leg
     400032: Right Leg_end
     4300000: Cube
+    7400000: Point.002|HeadAction
+    7400002: Point.002|HeadAction.001
+    7400004: Point|HeadAction
+    7400006: Point|HeadAction.001
+    7400008: Head|HeadAction
+    7400010: Head|HeadAction.001
+    7400012: Head|HeadAction.002
+    7400014: Cube|HeadAction
+    7400016: Cube|HeadAction.001
+    7400018: mainCamera|HeadAction
+    7400020: mainCamera|HeadAction.001
     9500000: //RootNode
     13700000: Cube
   materials:
