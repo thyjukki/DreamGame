@@ -31,8 +31,12 @@ public class movement : MonoBehaviour {
 			moveDirection.y = jumpSpeed;
 		*/
 
-		moveDirection.y -= gravity * Time.deltaTime;
+		//moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 		
+	}
+
+	void Start() {
+		Physics.gravity = new Vector3(0, -1.0F, 0);
 	}
 }

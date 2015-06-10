@@ -3,12 +3,12 @@ using System.Collections;
 
 public class camerafollow : MonoBehaviour {
 
-	public GameObject ball;
-	Vector3 cameradistance = new Vector3 (0.0F, 10.0F, 0.0F);
+	public GameObject target;
+	public float cameraDistance = 10.0F;
 
 
 	void Update () {
-			transform.position = ball.transform.position + cameradistance;
+		transform.position = Vector3.Lerp (transform.position, target.transform.position + new Vector3 (0.0F, 0.0F, -10F), 0.04F);
 
 		print (Input.GetAxis ("Mouse ScrollWheel"));
 	}
