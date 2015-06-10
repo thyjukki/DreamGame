@@ -16,7 +16,7 @@ public class movement : MonoBehaviour {
                           
 			//moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection = moveDirection.normalized;
-			print (moveDirection.magnitude);
+			//print (moveDirection.magnitude);
 
 			moveDirection *= speed * Time.deltaTime;
 
