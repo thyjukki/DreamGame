@@ -44,6 +44,6 @@ public class UIManagerScript : MonoBehaviour {
 
 	public void StartGame()
 	{
-		Application.LoadLevel("CubeFall");
+		Application.LoadLevel("LevelSelect");
 	}
 }
