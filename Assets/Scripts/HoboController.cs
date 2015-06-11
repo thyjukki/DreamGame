@@ -6,6 +6,8 @@ public class HoboController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	bool facingRight = false; 
 
+	public static bool dreaming = false;
+
 	Animator anim;
 	Rigidbody2D rb;
 
@@ -49,6 +51,9 @@ public class HoboController : MonoBehaviour {
 			anim.SetBool("Ground", false);
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 		}
+
+		if (Input.GetButtonDown ("Sleep"))
+			dreaming = !dreaming;
 	}
 
 

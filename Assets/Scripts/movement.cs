@@ -7,8 +7,12 @@ public class movement : MonoBehaviour {
 	public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
 	private Vector2 moveDirection = Vector2.zero;
+	public static bool dreaming;
 	
 	void Update() {
+
+
+
 		CharacterController controller = GetComponent<CharacterController>();
 
 		// Init intial move vector
@@ -33,6 +37,8 @@ public class movement : MonoBehaviour {
 
 		//moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+
+
 		
 	}
 
