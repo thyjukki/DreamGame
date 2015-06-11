@@ -13,6 +13,9 @@ public class dream : MonoBehaviour {
 		dreamSprite = (GameObject)Instantiate (dreamVersion, transform.position, Quaternion.identity);
 		dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
 
+		// TODO if invis object in real world, turn collisions off
+
+
 	}
 
 	void Update () {
