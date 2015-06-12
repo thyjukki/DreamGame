@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class combat : MonoBehaviour {
 
-	private List<GameObject> enemiesInTriggerArea;
+	private List<GameObject> enemiesInTriggerArea = new List<GameObject>();
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Enemy")
@@ -19,8 +19,9 @@ public class combat : MonoBehaviour {
 	}
 
 	void Update (){
-		if (Input.GetKeyDown ("Hit")) {
-			for (int i = 1; i < enemiesInTriggerArea.Length; i++) {
+		if (Input.GetButtonDown ("Hit")) {
+			for (int i = 1; i < enemiesInTriggerArea.Count; i++) {
+				print(enemiesInTriggerArea[i]);
 			}
 		}
 	}
