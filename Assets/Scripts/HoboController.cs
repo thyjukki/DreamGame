@@ -4,9 +4,9 @@ using System.Collections;
 public class HoboController : MonoBehaviour {
 
 	public float maxSpeed = 5f;
-	public static bool facingRight = false; 
+	public static bool facingRight; 
 
-	public static bool dreaming = false;
+	public static bool dreaming;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -24,6 +24,9 @@ public class HoboController : MonoBehaviour {
 		combatScript = (combat) GetComponentInChildren(typeof(combat));
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
+
+		facingRight = false;
+		dreaming = false;
 	}
 	
 
