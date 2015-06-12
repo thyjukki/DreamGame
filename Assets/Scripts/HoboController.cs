@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HoboController : MonoBehaviour {
 
-	public float maxSpeed = 10f;
+	public float maxSpeed = 5f;
 	bool facingRight = false; 
 
 	public static bool dreaming = false;
@@ -13,9 +13,9 @@ public class HoboController : MonoBehaviour {
 
 	bool grounded = false;
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
-	public float jumpForce =  700f;
+	public float jumpForce =  5;
 
 
 
@@ -40,7 +40,7 @@ public class HoboController : MonoBehaviour {
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
 		Rigidbody2D body = GetComponent<Rigidbody2D> ();
-		rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
+		rb.velocity = new Vector2 (move * maxSpeed*Mathf.Abs(transform.localScale.x), rb.velocity.y);
 
 		if ((move > 0 && !facingRight) || (move < 0 && facingRight))
 			Flip ();
@@ -49,7 +49,7 @@ public class HoboController : MonoBehaviour {
 	void Update(){
 		if (grounded && (Input.GetAxis("Jump") > 0.01)){
 			anim.SetBool("Ground", false);
-			rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+			rb.velocity = new Vector2(rb.velocity.x, jumpForce*Mathf.Abs(transform.localScale.y));
 		}
 
 		if (Input.GetButtonDown ("Sleep"))
