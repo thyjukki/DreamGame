@@ -11,12 +11,13 @@ public class dream : MonoBehaviour {
 	GameObject dreamSprite;
 
 	void Start (){
-		dreamSprite = (GameObject)Instantiate (dreamVersion, transform.position, Quaternion.identity);
-		dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
-
-		if (onlyInDream) {
-			setReal (false);
+		if (dreamVersion) {
+			dreamSprite = (GameObject)Instantiate (dreamVersion, transform.position, Quaternion.identity);
 			dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
+		}
+
+		if (onlyInDream && dreamVersion) {
+			setReal (false);
 		}
 		// TODO if invis object in real world, turn collisions off
 	}
@@ -26,13 +27,15 @@ public class dream : MonoBehaviour {
 		if (HoboController.dreaming == true && instantiatedDream == false) {
 			if (!onlyInDream)
 				setReal(true);
+			if (dreamVersion)
 			setDream(false);
 			instantiatedDream = true;
 		}
 
 		if (HoboController.dreaming == false && instantiatedDream == true){
 			setReal(false);
-			setDream(true);
+			if (dreamVersion)
+				setDream(true);
 
 			instantiatedDream = false;
 		}
