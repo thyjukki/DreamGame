@@ -14,6 +14,7 @@ public class dream : MonoBehaviour {
 		if (dreamVersion) {
 			dreamSprite = (GameObject)Instantiate (dreamVersion, transform.position, Quaternion.identity);
 			dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
+			instantiatedDream = true;
 		}
 
 		if (onlyInDream && dreamVersion) {
@@ -24,15 +25,14 @@ public class dream : MonoBehaviour {
 
 	void Update () {
 
-		if (HoboController.dreaming == true && instantiatedDream == false) {
+		if (HoboController.dreaming == false) {
 			if (!onlyInDream)
 				setReal(true);
 			if (dreamVersion)
 			setDream(false);
-			instantiatedDream = true;
 		}
 
-		if (HoboController.dreaming == false && instantiatedDream == true){
+		if (HoboController.dreaming == true){
 			setReal(false);
 			if (dreamVersion)
 				setDream(true);
