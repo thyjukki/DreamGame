@@ -40,12 +40,21 @@ public class KeyMapper : MonoBehaviour {
 				if (change && e.isKey)
 				{
 					inputManager[key].key = e.keyCode.ToString();
+					PlayerPrefs.SetString(inputManager[key].keyName, e.keyCode.ToString());
 					change = false;
 				}
 			}
 
 			if (GUILayout.Button("Test Button"))
 				test = true;
+		}
+	}
+
+	void Start()
+	{
+		for(int i = 0; i< inputManager.Count; i++)
+		{
+			inputManager[i].key = PlayerPrefs.GetString(inputManager[i].keyName);
 		}
 	}
 
@@ -57,6 +66,11 @@ public class KeyMapper : MonoBehaviour {
 
 			if(Input.GetKeyDown (shoot.key))
 				print (shoot.keyName);
+
+			InputManager jump = inputManager.Find (str => string.Equals(str.keyName, "Jump"));
+
+			if(Input.GetKeyDown(jump.key))
+				print (jump.keyName);
 		}
 	}
 }
