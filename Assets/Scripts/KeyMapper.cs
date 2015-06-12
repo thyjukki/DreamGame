@@ -7,6 +7,7 @@ public class KeyMapper : MonoBehaviour {
 	public List<InputManager> inputManager;
 
 	bool change;
+	bool test;
 	int key;
 
 	[System.Serializable]
@@ -42,6 +43,20 @@ public class KeyMapper : MonoBehaviour {
 					change = false;
 				}
 			}
+
+			if (GUILayout.Button("Test Button"))
+				test = true;
+		}
+	}
+
+	void FixedUpdate()
+	{
+		if (test)
+		{
+			InputManager shoot = inputManager.Find(str => string.Equals(str.keyName, "Shoot"));
+
+			if(Input.GetKeyDown (shoot.key))
+				print (shoot.keyName);
 		}
 	}
 }
