@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class combat : MonoBehaviour {
 
-	void OnTriggerEnter (Collider other) {
-		if (other.tag == "Enemy" && Input.GetKeyDown ("Hit")) {
-			print ("ouch!");
-		}
-		if (other.tag == "Enemy")
+	private List<GameObject> enemiesInTriggerArea;
+
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.tag == "Enemy" && Input.GetButtonDown("Hit"))
 			print ("moi");
 	}
+	              
 
 }
