@@ -60,7 +60,7 @@ public class combat : MonoBehaviour {
 		}
 	}
 
-	void LaunchProjectile (){ //launches a projectile of prefab ammoPrefab
+	void LaunchProjectile (){ //launches a projectile of prefab ammoPrefab at speed bulletSpeed
 		GameObject ammoObject = (GameObject)Instantiate (ammoPrefab, transform.position, Quaternion.identity);
 		Rigidbody2D ammorb = ammoObject.GetComponent<Rigidbody2D> ();
 		
