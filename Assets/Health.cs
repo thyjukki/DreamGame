@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 	public float maxHealth = 5;
-	public float curHealth = 5;
-	private bool playerDead = false;
+	public float currentHealth = 5;
+	private bool dead = false;
 
 
 	void Start()
@@ -13,19 +13,19 @@ public class Health : MonoBehaviour {
 
 	public void Damage(float dmg)
 	{
-		if (playerDead)
+		if (dead)
 			return;
-		curHealth -= dmg;
+		currentHealth -= dmg;
 
-		if (curHealth <= 0)
-			playerKilled();
+		if (currentHealth <= 0)
+			Killed();
 	}
 
-	void playerKilled()
+	void Killed()
 	{
-		playerDead = true;
+		dead = true;
 
-		print ("Player Died");
+		print ("Object Died");
 	}
 
 }
