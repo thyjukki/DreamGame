@@ -9,7 +9,7 @@ public class DestroyOnCollision : MonoBehaviour {
 			Health script = (Health)other.gameObject.GetComponent (typeof(Health));
 			script.Damage (5);
 			Destroy (gameObject);
-		}else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Check") {
+		}else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Check" && other.gameObject.tag != "BG") {
 			Destroy (gameObject);
 		}
 

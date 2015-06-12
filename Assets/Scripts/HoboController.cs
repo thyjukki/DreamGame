@@ -57,8 +57,11 @@ public class HoboController : MonoBehaviour {
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce*Mathf.Abs(transform.localScale.y));
 		}
 
-		if (Input.GetButtonDown ("Sleep"))
+		if (Input.GetButtonDown ("Sleep")) {
 			dreaming = !dreaming;
+		}
+
+			
 	}
 
 
