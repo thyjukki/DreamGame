@@ -4,9 +4,9 @@ using System.Collections;
 public class enemyController : MonoBehaviour {
 
 	public float maxSpeed = 5f;
-	bool facingRight = false; 
+	private bool facingRight; 
 	
-	public static bool dreaming = false;
+	public static bool dreaming;
 	
 	Animator anim;
 	Rigidbody2D rb;
@@ -31,6 +31,9 @@ public class enemyController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
+
+		facingRight = false;
+		dreaming = false;
 	}
 	
 	
