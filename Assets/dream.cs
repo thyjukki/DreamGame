@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class dream : MonoBehaviour {
 
+	public bool onlyInDream;
 	public GameObject dreamVersion;
 	bool instantiatedDream = false; //has this object been instantiated in the dream world yet?
 	private List<Object> dreamVersionList; //keeps track of instantiated object to make destroying them easy
@@ -13,47 +14,56 @@ public class dream : MonoBehaviour {
 		dreamSprite = (GameObject)Instantiate (dreamVersion, transform.position, Quaternion.identity);
 		dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
 
+		if (onlyInDream) {
+			setReal (false);
+			dreamSprite.GetComponent<SpriteRenderer> ().enabled = false;
+		}
 		// TODO if invis object in real world, turn collisions off
-
-
 	}
 
 	void Update () {
 
 		if (HoboController.dreaming == true && instantiatedDream == false) {
-			toggleComponents();
-
+			if (!onlyInDream)
+				setReal(true);
+			setDream(false);
 			instantiatedDream = true;
 		}
 
 		if (HoboController.dreaming == false && instantiatedDream == true){
-			toggleComponents();
+			setReal(false);
+			setDream(true);
 
 			instantiatedDream = false;
 		}
 
 	}
+	
+	void setReal(bool set){
+		
+		// TODO better way to do this
+		
+		if (GetComponent<BoxCollider2D> () != null)
+			GetComponent<BoxCollider2D> ().enabled = set;
+		
+		if (GetComponent<SpriteRenderer> () != null)
+			GetComponent<SpriteRenderer> ().enabled = set;
+		
+		if (GetComponent<CircleCollider2D> () != null)
+			GetComponent<CircleCollider2D> ().enabled = set;
+	}
 
-	void toggleComponents(){
+	void setDream(bool set){
 
 		// TODO better way to do this
 
-		if (GetComponent<BoxCollider2D> () != null)
-			GetComponent<BoxCollider2D> ().enabled = !GetComponent<BoxCollider2D> ().enabled;
-
-		if (GetComponent<SpriteRenderer> () != null)
-			GetComponent<SpriteRenderer> ().enabled = !GetComponent<SpriteRenderer> ().enabled;
-		
-		if (GetComponent<CircleCollider2D> () != null)
-			GetComponent<CircleCollider2D> ().enabled = !GetComponent<CircleCollider2D> ().enabled;
-
 		if (dreamSprite.GetComponent<BoxCollider2D> () != null)
-			dreamSprite.GetComponent<BoxCollider2D> ().enabled = !GetComponent<BoxCollider2D> ().enabled;
+			dreamSprite.GetComponent<BoxCollider2D> ().enabled = set;
 		
 		if (dreamSprite.GetComponent<SpriteRenderer> () != null)
-			dreamSprite.GetComponent<SpriteRenderer> ().enabled = !GetComponent<SpriteRenderer> ().enabled;
+			dreamSprite.GetComponent<SpriteRenderer> ().enabled = set;
 		
 		if (dreamSprite.GetComponent<CircleCollider2D> () != null)
-			dreamSprite.GetComponent<CircleCollider2D> ().enabled = !GetComponent<CircleCollider2D> ().enabled;
+			dreamSprite.GetComponent<CircleCollider2D> ().enabled = set;
 	}
 }
