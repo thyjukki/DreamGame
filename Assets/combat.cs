@@ -8,8 +8,13 @@ public class combat : MonoBehaviour {
 
 	private bool Attacking;
 	private Animator anim;
+	public float bulletSpeed;
+	public GameObject ammoPrefab;
+	public float fireRate;
+	private float lastFireTime;
 
 	private List<Collider2D> enemiesInTriggerArea = new List<Collider2D>();
+
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
 
@@ -32,13 +37,6 @@ public class combat : MonoBehaviour {
 		anim = GetComponentInParent<Animator> ();
 	}
 
-	/*void OnTriggerStay2D (Collider2D other){
-		if (other.gameObject.tag == "Enemy" && Input.GetButtonDown ("Hit")){
-			Health script = (Health) other.gameObject.GetComponent(typeof(Health));
-			script.Damage(5);
-		}
-	}*/
-
 	void Update()
 	{
 		if (Input.GetButtonDown ("Hit") && !Attacking) {
@@ -51,8 +49,30 @@ public class combat : MonoBehaviour {
 			Attacking = true;
 		}
 
+		if (Input.GetButtonDown ("Shoot")) {
+			LaunchProjectile();
+			lastFireTime = Time.time;
+		}
+
+		if (Input.GetButton ("Shoot") && (Time.time > (lastFireTime + fireRate))) {
+			LaunchProjectile ();
+			lastFireTime = Time.time;
+		}
 	}
-	
+
+	void LaunchProjectile (){ //launches a projectile of prefab ammoPrefab
+		GameObject ammoObject = (GameObject)Instantiate (ammoPrefab, transform.position, Quaternion.identity);
+		Rigidbody2D ammorb = ammoObject.GetComponent<Rigidbody2D> ();
+		
+		if (HoboController.facingRight == true) {
+			ammorb.velocity = (new Vector3 (1.0F, 0.0F, 0.0F) * bulletSpeed);
+		} else {
+			ammorb.velocity = (new Vector3 (-1.0F, 0.0F, 0.0F) * bulletSpeed);
+		}
+		
+		Destroy (ammoObject, 2.0F);
+	}
+		
 	public void animationEnd()
 	{
 		Attacking = false;
@@ -62,4 +82,5 @@ public class combat : MonoBehaviour {
 	{
 		//TODO Move attack code here
 	}
+
 }

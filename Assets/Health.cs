@@ -26,7 +26,7 @@ public class Health : MonoBehaviour {
 		dead = true;
 
 		print ("Object Died");
-		Destroy (this);
+		gameObject.SetActive(false);
 	}
 
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class HoboController : MonoBehaviour {
 
 	public float maxSpeed = 5f;
-	bool facingRight = false; 
+	public static bool facingRight = false; 
 
 	public static bool dreaming = false;
 
