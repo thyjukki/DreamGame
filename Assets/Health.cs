@@ -21,11 +21,12 @@ public class Health : MonoBehaviour {
 			Killed();
 	}
 
-	void Killed()
+	private void Killed()
 	{
 		dead = true;
 
 		print ("Object Died");
+		Destroy (this);
 	}
 
 }

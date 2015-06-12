@@ -16,10 +16,12 @@ public class HoboController : MonoBehaviour {
 	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 	public float jumpForce =  5;
+	combat combatScript;
 
 
 
 	void Start () {
+		combatScript = (combat) GetComponentInChildren(typeof(combat));
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
 	}
@@ -64,5 +66,15 @@ public class HoboController : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+	
+	void AttackEnd()
+	{
+		combatScript.animationEnd ();
+	}
+	
+	void Attack()
+	{
+		combatScript.animationAttack ();
 	}
 }
