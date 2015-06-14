@@ -24,7 +24,8 @@ public class Health : MonoBehaviour {
 	private void Killed()
 	{
 		dead = true;
-
+		ItemDrop itemdropScript = (ItemDrop) GetComponent(typeof(ItemDrop));
+		itemdropScript.DropItem ();
 		print ("Object Died");
 		gameObject.SetActive(false);
 	}
