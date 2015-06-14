@@ -7,7 +7,7 @@ public class inventory : MonoBehaviour {
 	public KeyMapper KeyMapper;
 
 	public float itemSize;
-	public List<Object> items = new List<Object>(); //holds list of items in inventory
+	public List<string> items = new List<string>(); //holds list of items in inventory
 	public List<GameObject> inventoryPositions = new List<GameObject>(); //positions of inventory slots
 	private bool inventoryOpen = false;
 	private List<GameObject> instantiatedItems = new List<GameObject>();
@@ -28,7 +28,8 @@ public class inventory : MonoBehaviour {
 			inventoryOpen = !inventoryOpen;
 			for (int i = 0; i < items.Count; i++) { //go through each item in inventory
 				//and instantiate them inventory positions
-				GameObject item = (GameObject) Instantiate (items [i], inventoryPositions [i].transform.position, Quaternion.identity);
+				print (items[i].Replace("(Clone)", ""));
+				GameObject item = (GameObject) Instantiate (Assets.Load(items[i].Replace("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
 
 				//scale item to itemSize
 				item.transform.localScale = new Vector3(itemSize, itemSize, item.transform.localScale.z);
