@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class inventory : MonoBehaviour {
 
+	public KeyMapper KeyMapper;
+
 	public float itemSize;
 	public List<Object> items = new List<Object>(); //holds list of items in inventory
 	public List<GameObject> inventoryPositions = new List<GameObject>(); //positions of inventory slots
@@ -16,7 +18,8 @@ public class inventory : MonoBehaviour {
 
 	void Update () {
 		//if list is open and I is pressed
-		if (Input.GetButtonDown ("Inventory") && inventoryOpen) {
+		KeyMapper.InputManager inventory = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Inventory"));
+		if(Input.GetKeyDown(inventory.key.ToLower()) && inventoryOpen) {
 			inventoryOpen = !inventoryOpen;
 			EmptyList();
 		
