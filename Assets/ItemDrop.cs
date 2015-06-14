@@ -22,6 +22,7 @@ public class ItemDrop : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		print ("other");
 		if (other.tag == "Ground") {
+			print ("ground");
 			item.GetComponent<Rigidbody2D> ().gravityScale = 0;
 			item.GetComponent<Rigidbody2D> ().isKinematic = true;
 			
