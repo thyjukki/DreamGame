@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HoboController : MonoBehaviour {
 
+	public KeyMapper KeyMapper;
+
 	public float maxSpeed = 5f;
 	public static bool facingRight; 
 
@@ -57,7 +59,8 @@ public class HoboController : MonoBehaviour {
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce*Mathf.Abs(transform.localScale.y));
 		}
 
-		if (Input.GetButtonDown ("Sleep")) {
+		KeyMapper.InputManager swap = KeyMapper.inputManager.Find(str => string.Equals(str.keyName, "Dream"));
+		if(Input.GetKeyDown (swap.key.ToLower ())) {
 			dreaming = !dreaming;
 		}
 

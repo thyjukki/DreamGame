@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class combat : MonoBehaviour {
 
+	public KeyMapper KeyMapper;
+
 	public Health healthscript;
 
 	private bool Attacking;
@@ -48,8 +50,8 @@ public class combat : MonoBehaviour {
 			anim.SetTrigger ("Attacking");
 			Attacking = true;
 		}
-
-		if (Input.GetButtonDown ("Shoot")) {
+		KeyMapper.InputManager shoot = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Shoot"));
+		if(Input.GetKeyDown(shoot.key.ToLower())) {
 			LaunchProjectile();
 			lastFireTime = Time.time;
 		}

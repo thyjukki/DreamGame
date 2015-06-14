@@ -76,10 +76,6 @@ public class KeyMapper : MonoBehaviour {
 	{
 		if (test)
 		{
-			InputManager swap = inputManager.Find(str => string.Equals(str.keyName, "Shoot"));
-
-			if(Input.GetKeyDown (swap.key.ToLower ()))
-				HoboController.dreaming = !HoboController.dreaming;
 
 			InputManager jump = inputManager.Find (str => string.Equals(str.keyName, "Jump"));
 
