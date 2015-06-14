@@ -1,15 +1,18 @@
 fileFormatVersion: 2
-guid: 1dc9b74bb5f2e684cb8af00637897a8d
-timeCreated: 1433956343
+guid: a39cccc2c492e4da793607b244fdc5ec
+timeCreated: 1434319280
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: hoboidle_0
-    21300002: hoboidle_1
+    21300000: idlehobo_0
+    21300002: idlehobo_1
+    21300004: idlehobo_2
+    21300006: idlehobo_3
+    21300008: idlehobo_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -31,8 +34,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: 1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -45,29 +48,59 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 32
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: hoboidle_0
+    - name: idlehobo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 512
-        height: 512
+        x: 5
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hoboidle_1
+    - name: idlehobo_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 16
-        width: 512
-        height: 512
+        x: 37
+        y: 7
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idlehobo_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 7
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idlehobo_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 7
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idlehobo_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

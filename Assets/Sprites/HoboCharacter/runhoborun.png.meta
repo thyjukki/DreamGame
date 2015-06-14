@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: b7235c8e0f2b46843b1a2596aad03919
-timeCreated: 1433950337
+guid: 291cd753da2314f1f95079ae51e1504d
+timeCreated: 1434319375
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spriteshetguy_0
-    21300002: spriteshetguy_1
-    21300004: spriteshetguy_2
-    21300006: spriteshetguy_3
-    21300008: spriteshetguy_4
-    21300010: spriteshetguy_5
-    21300012: spriteshetguy_6
-    21300014: spriteshetguy_7
+    21300000: runhoborun_0
+    21300002: runhoborun_1
+    21300004: runhoborun_2
+    21300006: runhoborun_3
+    21300008: runhoborun_4
+    21300010: runhoborun_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -34,10 +32,10 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -51,89 +49,69 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 32
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spriteshetguy_0
+    - name: runhoborun_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 512
-        height: 512
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_1
+    - name: runhoborun_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 32
-        width: 512
-        height: 512
+        x: 32
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_2
+    - name: runhoborun_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 32
-        width: 512
-        height: 512
+        x: 64
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_3
+    - name: runhoborun_3
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 32
-        width: 512
-        height: 512
+        x: 96
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_4
+    - name: runhoborun_4
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 32
-        width: 512
-        height: 512
+        x: 128
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_5
+    - name: runhoborun_5
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 32
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_6
-      rect:
-        serializedVersion: 2
-        x: 3072
-        y: 32
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteshetguy_7
-      rect:
-        serializedVersion: 2
-        x: 3584
-        y: 32
-        width: 512
-        height: 512
+        x: 160
+        y: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
