@@ -29,7 +29,7 @@ public class inventory : MonoBehaviour {
 			for (int i = 0; i < items.Count; i++) { //go through each item in inventory
 				//and instantiate them inventory positions
 				print (items[i].Replace("(Clone)", ""));
-				GameObject item = (GameObject) Instantiate (Assets.Load(items[i].Replace("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
+				GameObject item = (GameObject) Instantiate (Resources.Load("prefabs/" + items[i].Replace("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
 
 				//scale item to itemSize
 				item.transform.localScale = new Vector3(itemSize, itemSize, item.transform.localScale.z);
