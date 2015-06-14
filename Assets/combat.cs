@@ -50,8 +50,8 @@ public class combat : MonoBehaviour {
 			anim.SetTrigger ("Attacking");
 			Attacking = true;
 		}
-		KeyMapper.InputManager shoot = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Shoot"));
-		if(Input.GetKeyDown(shoot.key.ToLower())) {
+		//KeyMapper.InputManager shoot = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Shoot"));
+		if(Input.GetButtonDown("Shoot")) {
 			LaunchProjectile();
 			lastFireTime = Time.time;
 		}

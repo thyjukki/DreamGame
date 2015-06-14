@@ -20,8 +20,9 @@ public class Pickupable : MonoBehaviour {
 			if (GetComponent<CircleCollider2D> ().IsTouching (GameObject.Find ("Hobo").GetComponent<BoxCollider2D>()) == true) {
 				inventory inventoryScript = (inventory)GameObject.Find ("Main Camera").GetComponent (typeof(inventory));
 				Object item = (Object)gameObject;
+				Object itemCopy = item;
 				inventoryScript.items.Add (item);
-				Destroy (gameObject);
+
 			}
 		}
 

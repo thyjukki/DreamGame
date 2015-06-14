@@ -59,8 +59,8 @@ public class HoboController : MonoBehaviour {
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce*Mathf.Abs(transform.localScale.y));
 		}
 
-		KeyMapper.InputManager swap = KeyMapper.inputManager.Find(str => string.Equals(str.keyName, "Dream"));
-		if(Input.GetKeyDown (swap.key.ToLower ())) {
+		//KeyMapper.InputManager swap = KeyMapper.inputManager.Find(str => string.Equals(str.keyName, "Dream"));
+		if(Input.GetButtonDown("Sleep")) {
 			dreaming = !dreaming;
 		}
 

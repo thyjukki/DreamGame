@@ -18,8 +18,8 @@ public class inventory : MonoBehaviour {
 
 	void Update () {
 		//if list is open and I is pressed
-		KeyMapper.InputManager inventory = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Inventory"));
-		if(Input.GetKeyDown(inventory.key.ToLower()) && inventoryOpen) {
+		//KeyMapper.InputManager inventoryKeyMapper = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Inventory"));
+		if(Input.GetButtonDown("Inventory") && inventoryOpen) {
 			inventoryOpen = !inventoryOpen;
 			EmptyList();
 		
