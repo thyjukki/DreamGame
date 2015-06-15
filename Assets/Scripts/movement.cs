@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
+
+	public KeyMapper KeyMapper;
 	
 	public float speed = 6.0F;
 	public float jumpSpeed = 8.0F;
@@ -27,8 +29,9 @@ public class movement : MonoBehaviour {
 		
 
 		//check if we are grounded so we can jump
+		KeyMapper.InputManager jump = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Jump"));
 		if (controller.isGrounded) {
-			if (Input.GetKeyDown("space"))
+			if(Input.GetKeyDown(jump.key.ToLower()))
 				moveDirection += new Vector2(0,jumpSpeed);
 		}
 		/*if (Input.GetButton("Jump"))
