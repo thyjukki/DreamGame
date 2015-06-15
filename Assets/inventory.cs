@@ -24,7 +24,7 @@ public class inventory : MonoBehaviour {
 
 			EmptyList();
 		
-		//if list if not open and I is pressed
+		//if list if not open and I is pressed and inventory isn't empty
 		}else if ((Input.GetKeyDown(inventory.key.ToLower()) && !inventoryOpen && (items.Count != 0))) {
 			OpenInventory();
 		}
@@ -34,7 +34,6 @@ public class inventory : MonoBehaviour {
 				instantiatedItems[i].transform.position = inventoryPositions[i].transform.position;
 			}
 		}
-
 	}
 
 	void EmptyList (){
