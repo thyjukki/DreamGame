@@ -29,6 +29,8 @@ public class HoboController : MonoBehaviour {
 
 		facingRight = false;
 		dreaming = false;
+
+
 	}
 	
 
