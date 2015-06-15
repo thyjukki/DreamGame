@@ -21,14 +21,14 @@ public class inventory : MonoBehaviour {
 		KeyMapper.InputManager inventory = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Inventory"));
 		if(Input.GetKeyDown(inventory.key.ToLower()) && inventoryOpen) {
 			inventoryOpen = !inventoryOpen;
+			keepInventoryOpen = false;
 			EmptyList();
 		
 		//if list if not open and I is pressed
-		}else if (Input.GetKeyDown(inventory.key.ToLower()) && !inventoryOpen) {
+		}else if ((Input.GetKeyDown(inventory.key.ToLower()) && !inventoryOpen)) {
 			inventoryOpen = !inventoryOpen;
 			for (int i = 0; i < items.Count; i++) { //go through each item in inventory
 				//and instantiate them inventory positions
-				print (items[i].Replace("(Clone)", ""));
 				GameObject item = (GameObject) Instantiate (Resources.Load("prefabs/" + items[i].Replace("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
 
 				//scale item to itemSize
@@ -46,6 +46,7 @@ public class inventory : MonoBehaviour {
 				instantiatedItems.Add(item);
 				
 			}
+			EmptyList();
 			
 		}
 
