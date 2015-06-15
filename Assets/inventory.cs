@@ -25,27 +25,8 @@ public class inventory : MonoBehaviour {
 			EmptyList();
 		
 		//if list if not open and I is pressed
-		}else if ((Input.GetKeyDown(inventory.key.ToLower()) && !inventoryOpen)) {
-			inventoryOpen = !inventoryOpen;
-			for (int i = 0; i < items.Count; i++) { //go through each item in inventory
-				//and instantiate them inventory positions
-				GameObject item = (GameObject) Instantiate (Resources.Load("prefabs/" + items[i].Replace("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
-
-				//scale item to itemSize
-				item.transform.localScale = new Vector3(itemSize, itemSize, item.transform.localScale.z);
-				//set item's sorting layer to UI so it renders in front
-				item.GetComponent<SpriteRenderer>().sortingLayerName = "UI";
-
-				//set colliders off
-				if (item.GetComponent<BoxCollider2D> () != null)
-					item.GetComponent<BoxCollider2D> ().enabled = false;
-				if (item.GetComponent<CircleCollider2D> () != null)
-					item.GetComponent<CircleCollider2D> ().enabled = false;
-
-				//add item to list of instantiated items
-				instantiatedItems.Add(item);
-				
-			}
+		}else if ((Input.GetKeyDown(inventory.key.ToLower()) && !inventoryOpen && (items.Count != 0))) {
+			OpenInventory();
 		}
 
 		if (inventoryOpen) {
@@ -64,5 +45,28 @@ public class inventory : MonoBehaviour {
 		//clear list of instantiated items
 		instantiatedItems.Clear();
 
+	}
+
+	void OpenInventory (){
+		inventoryOpen = !inventoryOpen;
+		for (int i = 0; i < items.Count; i++) { //go through each item in inventory
+			//and instantiate them inventory positions
+			GameObject item = (GameObject)Instantiate (Resources.Load ("prefabs/" + items [i].Replace ("(Clone)", ""), typeof(GameObject)), inventoryPositions [i].transform.position, Quaternion.identity);
+			
+			//scale item to itemSize
+			item.transform.localScale = new Vector3 (itemSize, itemSize, item.transform.localScale.z);
+			//set item's sorting layer to UI so it renders in front
+			item.GetComponent<SpriteRenderer> ().sortingLayerName = "UI";
+			
+			//set colliders off
+			if (item.GetComponent<BoxCollider2D> () != null)
+				item.GetComponent<BoxCollider2D> ().enabled = false;
+			if (item.GetComponent<CircleCollider2D> () != null)
+				item.GetComponent<CircleCollider2D> ().enabled = false;
+			
+			//add item to list of instantiated items
+			instantiatedItems.Add (item);
+			
+		}
 	}
 }
