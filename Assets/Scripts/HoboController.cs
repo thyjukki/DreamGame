@@ -57,7 +57,7 @@ public class HoboController : MonoBehaviour {
 
 	void Update(){
 		KeyMapper.InputManager jump = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Jump"));
-		if (grounded && (Input.GetKeyDown(jump.key.ToLower()))){
+		if (grounded && (Input.GetKey(jump.key.ToLower()))){
 			anim.SetBool("Ground", false);
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce*Mathf.Abs(transform.localScale.y));
 		}

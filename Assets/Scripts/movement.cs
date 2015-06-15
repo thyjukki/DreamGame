@@ -31,7 +31,7 @@ public class movement : MonoBehaviour {
 		//check if we are grounded so we can jump
 		KeyMapper.InputManager jump = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Jump"));
 		if (controller.isGrounded) {
-			if(Input.GetKeyDown(jump.key.ToLower()))
+			if(Input.GetKey(jump.key.ToLower()))
 				moveDirection += new Vector2(0,jumpSpeed);
 		}
 		/*if (Input.GetButton("Jump"))

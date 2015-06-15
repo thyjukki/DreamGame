@@ -56,7 +56,7 @@ public class combat : MonoBehaviour {
 			lastFireTime = Time.time;
 		}
 
-		if(Input.GetKeyDown(shoot.key.ToLower()) && (Time.time > (lastFireTime + fireRate))) {
+		if(Input.GetKey(shoot.key.ToLower()) && (Time.time > (lastFireTime + fireRate))) {
 			LaunchProjectile ();
 			lastFireTime = Time.time;
 		}
