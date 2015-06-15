@@ -82,10 +82,10 @@ public class KeyMapper : MonoBehaviour {
 			if(Input.GetKeyDown(jump.key.ToLower()))
 				print (jump.keyName);
 
-			InputManager crouch = inputManager.Find (str => string.Equals(str.keyName, "Crouch"));
+			InputManager shoot = inputManager.Find (str => string.Equals(str.keyName, "Shoot"));
 			
-			if(Input.GetKeyDown(crouch.key.ToLower()))
-				print (crouch.keyName);
+			if(Input.GetKeyDown(shoot.key.ToLower()))
+				print (shoot.keyName);
 		}
 	}
 }
