@@ -49,6 +49,31 @@ public class KeyMapper : MonoBehaviour {
 					{
 						inputManager[key].key = "right ctrl";
 						PlayerPrefs.SetString (inputManager[key].keyName, "right ctrl");
+
+					}
+					else if (e.keyCode.ToString() == "UpArrow")
+					{
+						inputManager[key].key = "up";
+						PlayerPrefs.SetString (inputManager[key].keyName, "up");
+						
+					}
+					else if (e.keyCode.ToString() == "DownArrow")
+					{
+						inputManager[key].key = "down";
+						PlayerPrefs.SetString (inputManager[key].keyName, "down");
+						
+					}
+					else if (e.keyCode.ToString() == "LeftArrow")
+					{
+						inputManager[key].key = "left";
+						PlayerPrefs.SetString (inputManager[key].keyName, "left");
+						
+					}
+					else if (e.keyCode.ToString() == "RightArrow")
+					{
+						inputManager[key].key = "right";
+						PlayerPrefs.SetString (inputManager[key].keyName, "right");
+						
 					}
 					else
 					{
