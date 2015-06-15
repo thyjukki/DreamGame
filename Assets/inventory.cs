@@ -21,7 +21,7 @@ public class inventory : MonoBehaviour {
 		KeyMapper.InputManager inventory = KeyMapper.inputManager.Find (str => string.Equals(str.keyName, "Inventory"));
 		if(Input.GetKeyDown(inventory.key.ToLower()) && inventoryOpen) {
 			inventoryOpen = !inventoryOpen;
-			keepInventoryOpen = false;
+
 			EmptyList();
 		
 		//if list if not open and I is pressed
@@ -46,8 +46,6 @@ public class inventory : MonoBehaviour {
 				instantiatedItems.Add(item);
 				
 			}
-			EmptyList();
-			
 		}
 
 		if (inventoryOpen) {
