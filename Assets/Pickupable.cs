@@ -17,7 +17,7 @@ public class Pickupable : MonoBehaviour {
 
 	void Update(){
 		if (GetComponent<CircleCollider2D> () != null) {
-			if (GetComponent<CircleCollider2D> ().IsTouching (GameObject.Find ("Hobo").GetComponent<BoxCollider2D>()) == true) {
+			if (GetComponent<CircleCollider2D> ().IsTouching (GameObject.Find ("Hobo").GetComponent<PolygonCollider2D>()) == true) {
 				inventory inventoryScript = (inventory)GameObject.Find ("Main Camera").GetComponent (typeof(inventory));
 				inventoryScript.items.Add (gameObject.name);
 				Destroy(gameObject);
@@ -26,7 +26,7 @@ public class Pickupable : MonoBehaviour {
 		}
 
 		if (GetComponent<BoxCollider2D> () != null) {
-			if (GetComponent<BoxCollider2D> ().IsTouching (GameObject.Find ("Hobo").GetComponent<BoxCollider2D>()) == true) {
+			if (GetComponent<BoxCollider2D> ().IsTouching (GameObject.Find ("Hobo").GetComponent<PolygonCollider2D>()) == true) {
 				inventory inventoryScript = (inventory)GameObject.Find ("Main Camera").GetComponent (typeof(inventory));
 				inventoryScript.items.Add (gameObject.name);
 				Destroy (gameObject);
