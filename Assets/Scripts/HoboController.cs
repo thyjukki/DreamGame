@@ -20,6 +20,8 @@ public class HoboController : MonoBehaviour {
 	public float jumpForce =  5;
 	combat combatScript;
 
+	private GameObject[] shadowMonsters;
+
 
 
 	void Start () {
@@ -30,6 +32,11 @@ public class HoboController : MonoBehaviour {
 		facingRight = false;
 		dreaming = false;
 
+		shadowMonsters = GameObject.FindGameObjectsWithTag("ShadowEnemy");
+
+		foreach(GameObject shadowmonster in shadowMonsters){
+			shadowmonster.SetActive(false);
+		}
 
 	}
 	
@@ -65,6 +72,15 @@ public class HoboController : MonoBehaviour {
 		KeyMapper.InputManager sleep = KeyMapper.inputManager.Find(str => string.Equals(str.keyName, "Sleep"));
 		if(Input.GetKeyDown(sleep.key.ToLower())) {
 			dreaming = !dreaming;
+			if (dreaming == true){
+				foreach(GameObject shadowmonster in shadowMonsters){
+					shadowmonster.SetActive(true);
+				}
+			}else{
+				foreach(GameObject shadowmonster in shadowMonsters){
+					shadowmonster.SetActive(false);
+				}
+			}
 		}
 
 			
