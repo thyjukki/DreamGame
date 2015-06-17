@@ -3,16 +3,18 @@ using System.Collections;
 
 public class DreamTrigger : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	public float destinationX;
+
+	void OnTriggerStay2D(Collider2D other){
+		
+		if ((other.name == "Hobo") && (Input.GetAxis ("Vertical") > 0.01)) {
+			other.gameObject.transform.position = new Vector2 (destinationX, 2f);
+			GameObject.Find ("Main Camera").transform.position = new Vector3 (destinationX, 3f, GameObject.Find ("Main Camera").transform.position.z);
+
+			HoboController.dreaming = true;
+
+		}
+	
 	}
 
-	void OnTriggerEnter(Collider other)  {
-		if (other.tag == "Player")
-		{
-			print ("I am being touched");
-			if (Input.GetButtonDown("Sleep"))
-			    print ("tosleep");
-		}
-	}
 }
