@@ -10,6 +10,8 @@ public class HoboController : MonoBehaviour {
 
 	public static bool dreaming;
 
+	public GameObject screenFader;
+
 	Animator anim;
 	Rigidbody2D rb;
 
@@ -83,7 +85,6 @@ public class HoboController : MonoBehaviour {
 			}
 		}
 
-			
 	}
 
 
